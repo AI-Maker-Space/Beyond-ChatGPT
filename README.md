@@ -27,9 +27,9 @@ Install the packages required for this python envirnoment in `requirements.txt`.
 pip install -r requirements.txt
 ```
 
-Add your OpenAI Key to `.env` file and save the file.
+Open your `.env` file. Replace the `###` in your `.env` file with your OpenAI Key and save the file.
 ```
-
+OPENAI_API_KEY=sk-###
 ```
 
 Let's try deploying it locally. Make sure you're in the python environment where you installed Chainlit and OpenAI.
@@ -44,12 +44,12 @@ Great work! Let's see if we can interact with our chatbot.
 
 Time to throw it into a docker container a prepare it for shipping
 
-Build the Docker Image
+Build the Docker image. We'll tag our image as `llm-app` using the `-t` parameter. The `.` at the end means we want all of the files in our current directory to be added to our image.
 ``` bash
 docker build -t llm-app .
 ```
 
-Test the Docker Image Locally (Optional)
+Run and test the Docker image locally using the `run` command. The `-p`parameter connects our host port # to the left of the `:` to our container port # on the right.
 ``` bash
 docker run -p 7860:7860 llm-app
 ```
