@@ -49,7 +49,7 @@ Build the Docker image. We'll tag our image as `llm-app` using the `-t` paramete
 docker build -t llm-app .
 ```
 
-Run and test the Docker image locally using the `run` command. The `-p`parameter connects our host port # to the left of the `:` to our container port # on the right.
+Run and test the Docker image locally using the `run` command. The `-p`parameter connects our **host port #** to the left of the `:` to our **container port #** on the right.
 ``` bash
 docker run -p 7860:7860 llm-app
 ```
