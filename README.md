@@ -9,14 +9,28 @@ A GitHub account
 Docker installed on your local machine
 A Huggingface Spaces account
 
+
 ### Building our App
-Clone this repo
+Clone [this](https://github.com/AI-Maker-Space/Beyond-ChatGPT/tree/main) repo.
+
+``` bash
+git clone https://github.com/AI-Maker-Space/Beyond-ChatGPT.git
+```
 
 Navigate inside this repo
+```
+cd Beyond-ChatGPT
+```
 
-### Install requirements using `pip install -r requirements.txt`?????????
+Install the packages required for this python envirnoment in `requirements.txt`.
+```
+pip install -r requirements.txt
+```
 
 Add your OpenAI Key to `.env` file and save the file.
+```
+
+```
 
 Let's try deploying it locally. Make sure you're in the python environment where you installed Chainlit and OpenAI.
 
