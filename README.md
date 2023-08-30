@@ -28,12 +28,25 @@ chainlit run app.py -w
 
 Great work! Let's see if we can interact with our chatbot.
 
-It works! Let's ship it!
+Time to throw it into a docker container a prepare it for shipping
 
+Build the Docker Image
+``` bash
+docker build -t llm-app .
+```
+
+Test the Docker Image Locally (Optional)
+``` bash
+docker run -p 7860:7860 llm-app
+```
+
+Visit http://localhost:7860 in your browser to see if the app runs correctly.
+
+Great! Time to ship!
 
 ### Deploy to Huggingface Spaces
 
-Login to Huggingface Spaces CLI
+Make sure you're logged into Huggingface Spaces CLI
 
 ``` bash
 huggingface-cli login
@@ -41,14 +54,6 @@ huggingface-cli login
 
 Follow the prompts to authenticate.
 
-
-
-Push Docker Image to Huggingface Container Registry
-
-```
-docker tag llm-app:latest huggingface/your-username/llm-app:latest
-docker push huggingface/your-username/llm-app:latest
-```
 
 Deploy to Huggingface Spaces
 
