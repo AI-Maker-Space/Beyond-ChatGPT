@@ -72,6 +72,18 @@ Follow the prompts to authenticate.
 Deploy to Huggingface Spaces
 
 
+Create a new Huggingface Space
+
+- Owner: Your username
+- Space Name: `llm-app`
+- License: `Openrail`
+- Select the Space SDK: `Docker`
+- Docker Template: `Blank`
+- Space Hardware: `CPU basic - 2 vCPU - 16 GB - Free`
+- Repo type: `Public`
+
+
+
 Deploying on Huggingface Spaces using a custom Docker image involves using their web interface. Go to Huggingface Spaces and create a new space, then set it up to use your Docker image from the Huggingface Container Registry.
 
 Access the Application
