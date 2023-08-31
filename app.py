@@ -20,8 +20,7 @@ settings = {
     "presence_penalty": 0, # higher value will result in the model being more likely to generate tokens that have not yet been included in the generated text
 }
 
-
-@cl.on_chat_start
+@cl.on_chat_start # marks a function that will be executed at the start of a user session
 def start_chat():
     cl.user_session.set(
         "message_history",
@@ -29,7 +28,7 @@ def start_chat():
     )
 
 
-@cl.on_message
+@cl.on_message # marks a function that should be run each time the chatbot receives a message from a user
 async def main(message: str):
     message_history = cl.user_session.get("message_history")
     message_history.append({"role": "user", "content": message})
