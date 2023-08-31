@@ -2,19 +2,22 @@
 
 # OpenAI Chat completion
 
-import openai
-import chainlit as cl
+import openai #importing openai for API usage
+import chainlit as cl #importing chainlit for our app
 
 # You only need the api key inserted here if it's not in your .env file
 #openai.api_key = "YOUR_API_KEY"
 
+# We select our model. If you do not have access to GPT-4, please use GPT-3.5T (gpt-3.5-turbo)
+
 model_name = "gpt-3.5-turbo"
+# model_name = "gpt-4"
 settings = {
-    "temperature": 0.7,
-    "max_tokens": 500,
-    "top_p": 1,
-    "frequency_penalty": 0,
-    "presence_penalty": 0,
+    "temperature": 0.7, # higher value increases output diveresity/randomness
+    "max_tokens": 500, # maximum length of output response
+    "top_p": 1, # choose only the top x% of possible words to return
+    "frequency_penalty": 0, # higher value will result in the model being more conservative in its use of repeated tokens.
+    "presence_penalty": 0, # higher value will result in the model being more likely to generate tokens that have not yet been included in the generated text
 }
 
 
