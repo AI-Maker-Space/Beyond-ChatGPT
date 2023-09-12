@@ -1,3 +1,11 @@
+<p align = "center" draggable=”false” ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719" 
+     width="200px"
+     height="auto"/>
+</p>
+
+
+## <h1 align="center" id="heading">:wave: Welcome to Beyond ChatGPT!!</h1>
+
 ## 🤖 Your First LLM App
 
 In this repository, we'll walk you through the steps to create a Large Language Model (LLM) application using Chainlit, then containerize it using Docker, and finally deploy it on Huggingface Spaces.
