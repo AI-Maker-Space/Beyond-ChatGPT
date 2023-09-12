@@ -31,7 +31,7 @@ def start_chat():
 @cl.on_message # marks a function that should be run each time the chatbot receives a message from a user
 async def main(message: str):
     message_history = cl.user_session.get("message_history")
-    message_history.append({"role": "user", "content": message})
+    message_history.append({"role": "user", "content": message + " Think through your response step by step."})
 
     msg = cl.Message(content="")
 
