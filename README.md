@@ -13,6 +13,13 @@ In this repository, we'll walk you through the steps to create a Large Language 
 Are you ready? Let's get started!
 
 <details>
+  <summary>🖥️ Accessing `gpt-3.5-turbo` like a developer</summary>
+
+1. Head to [this notebook]() and follow along with the instructions!
+</details>
+
+
+<details>
   <summary>🏗️ Building Your First LLM App</summary>
 
 1. Clone [this](https://github.com/AI-Maker-Space/Beyond-ChatGPT/tree/main) repo.
