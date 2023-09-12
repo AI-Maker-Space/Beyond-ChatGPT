@@ -13,9 +13,14 @@ In this repository, we'll walk you through the steps to create a Large Language 
 Are you ready? Let's get started!
 
 <details>
-  <summary>🖥️ Accessing `gpt-3.5-turbo` like a developer</summary>
+  <summary>🖥️ Accessing "gpt-3.5-turbo" (ChatGPT) like a developer</summary>
 
-1. Head to [this notebook]() and follow along with the instructions!
+1. Head to [this notebook](https://colab.research.google.com/drive/1mOzbgf4a2SP5qQj33ZxTz2a01-5eXqk2?usp=sharing) and follow along with the instructions!
+
+2. Complete the notebook and try out your own system/assistant messages!
+
+That's it! Head to the next step and start building your application!
+
 </details>
 
 
