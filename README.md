@@ -156,6 +156,25 @@ Great! Time to ship!
 
 8. Congratulations! You just deployed your first LLM! 🚀🚀🚀 Get on linkedin and post your results and experience! Make sure to tag us at #AIMakerspace !
 
+Here's a template to get your post started!
+
+```
+🚀🎉 Exciting News! 🎉🚀
+
+🏗️ Today, I'm thrilled to announce that I've successfully built and shipped my first-ever LLM using the powerful combination of Chainlit, Docker, and the OpenAI API! 🖥️
+
+Check it out 👇
+[LINK TO APP]
+
+A big shoutout to the @**AI Makerspace** for all making this possible. Couldn't have done it without the incredible community there. 🤗🙏
+
+Looking forward to building with the community! 🙌✨ Here's to many more creations ahead! 🥂🎉
+
+Who else is diving into the world of AI? Let's connect! 🌐💡
+
+#FirstLLM #Chainlit #Docker #OpenAI #AIMakerspace
+```
+
 </details>
 
 <p></p>
