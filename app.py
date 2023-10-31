@@ -2,14 +2,18 @@
 
 # OpenAI Chat completion
 
-import openai #importing openai for API usage
-import chainlit as cl #importing chainlit for our app
-from chainlit.input_widget import Select, Switch, Slider #importing chainlit settings selection tools
-from chainlit.prompt import Prompt, PromptMessage #importing prompt tools 
-from chainlit.playground.providers import ChatOpenAI #importing ChatOpenAI tools
+import openai  # importing openai for API usage
+import chainlit as cl  # importing chainlit for our app
+from chainlit.input_widget import (
+    Select,
+    Switch,
+    Slider,
+)  # importing chainlit settings selection tools
+from chainlit.prompt import Prompt, PromptMessage  # importing prompt tools
+from chainlit.playground.providers import ChatOpenAI  # importing ChatOpenAI tools
 
 # You only need the api key inserted here if it's not in your .env file
-#openai.api_key = "YOUR_API_KEY"
+# openai.api_key = "YOUR_API_KEY"
 
 # ChatOpenAI Templates
 system_template = """You are a helpful assistant who always speaks in a pleasant tone!
@@ -19,7 +23,8 @@ user_template = """{input}
 Think through your response step by step.
 """
 
-@cl.on_chat_start # marks a function that will be executed at the start of a user session
+
+@cl.on_chat_start  # marks a function that will be executed at the start of a user session
 async def start_chat():
     settings = {
         "model": "gpt-3.5-turbo",
@@ -32,9 +37,9 @@ async def start_chat():
 
     cl.user_session.set("settings", settings)
 
-@cl.on_message # marks a function that should be run each time the chatbot receives a message from a user
-async def main(message):
 
+@cl.on_message  # marks a function that should be run each time the chatbot receives a message from a user
+async def main(message):
     settings = cl.user_session.get("settings")
 
     prompt = Prompt(
@@ -47,12 +52,12 @@ async def main(message):
             ),
             PromptMessage(
                 role="user",
-                template=user_template, 
-                formatted=user_template.format(input=message),
-            )
+                template=user_template,
+                formatted=user_template.format(input=message.content),
+            ),
         ],
-        inputs = {"input" : message.content},
-        settings=settings
+        inputs={"input": message.content},
+        settings=settings,
     )
 
     print([m.to_openai() for m in prompt.messages])
