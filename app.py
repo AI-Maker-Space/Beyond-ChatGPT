@@ -33,7 +33,7 @@ async def start_chat():
     cl.user_session.set("settings", settings)
 
 @cl.on_message # marks a function that should be run each time the chatbot receives a message from a user
-async def main(message: str):
+async def main(message):
 
     settings = cl.user_session.get("settings")
 
@@ -51,7 +51,7 @@ async def main(message: str):
                 formatted=user_template.format(input=message),
             )
         ],
-        inputs = {"input" : message},
+        inputs = {"input" : message.content},
         settings=settings
     )
 
