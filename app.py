@@ -1,19 +1,14 @@
 # You can find this code for Chainlit python streaming here (https://docs.chainlit.io/concepts/streaming/python)
 
 # OpenAI Chat completion
-
-import openai  # importing openai for API usage
+import os
+from openai import AsyncOpenAI  # importing openai for API usage
 import chainlit as cl  # importing chainlit for our app
-from chainlit.input_widget import (
-    Select,
-    Switch,
-    Slider,
-)  # importing chainlit settings selection tools
 from chainlit.prompt import Prompt, PromptMessage  # importing prompt tools
 from chainlit.playground.providers import ChatOpenAI  # importing ChatOpenAI tools
+from dotenv import load_dotenv
 
-# You only need the api key inserted here if it's not in your .env file
-# openai.api_key = "YOUR_API_KEY"
+load_dotenv()
 
 # ChatOpenAI Templates
 system_template = """You are a helpful assistant who always speaks in a pleasant tone!
@@ -39,8 +34,12 @@ async def start_chat():
 
 
 @cl.on_message  # marks a function that should be run each time the chatbot receives a message from a user
-async def main(message):
+async def main(message: cl.Message):
     settings = cl.user_session.get("settings")
+
+    client = AsyncOpenAI()
+
+    print(message.content)
 
     prompt = Prompt(
         provider=ChatOpenAI.id,
@@ -65,10 +64,12 @@ async def main(message):
     msg = cl.Message(content="")
 
     # Call OpenAI
-    async for stream_resp in await openai.ChatCompletion.acreate(
+    async for stream_resp in await client.chat.completions.create(
         messages=[m.to_openai() for m in prompt.messages], stream=True, **settings
     ):
-        token = stream_resp.choices[0]["delta"].get("content", "")
+        token = stream_resp.choices[0].delta.content
+        if not token:
+            token = ""
         await msg.stream_token(token)
 
     # Update the prompt object with the completion
