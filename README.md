@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: BeyondChatGPT Demo
 emoji: 📉
 colorFrom: pink
@@ -187,3 +188,15 @@ Who else is diving into the world of AI? Let's connect! 🌐💡
 <p></p>
 
 ### That's it for now!  And so it begins.... :)
+=======
+title: FirstLLMApplication
+emoji: 📚
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+pinned: false
+license: mit
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> 38def0b937ede06e744c96bff15c14fc21912c29
