@@ -54,9 +54,19 @@ That's it! Head to the next step and start building your application!
      cd Beyond-ChatGPT
      ```
 
-3. Install the packages required for this python envirnoment in `requirements.txt`.
+3. Create a virtual environment and install dependencies.
      ``` bash
-     pip install -r requirements.txt
+     # Create a virtual environment
+     uv venv
+
+     # Activate the virtual environment
+     # On macOS/Linux:
+     source .venv/bin/activate
+     # On Windows:
+     # .venv\Scripts\activate
+
+     # Install dependencies from pyproject.toml
+     uv sync
      ``` 
 
 4. Open your `.env` file. Replace the `###` in your `.env` file with your OpenAI Key and save the file.
@@ -64,18 +74,18 @@ That's it! Head to the next step and start building your application!
      OPENAI_API_KEY=sk-###
      ```
 
-5. Let's try deploying it locally. Make sure you're in the python environment where you installed Chainlit and OpenAI. Run the app using Chainlit. This may take a minute to run.
+5. Let's try deploying it locally. Make sure you're in the activated virtual environment. Run the app using Chainlit. This may take a minute to run.
      ``` bash
-     chainlit run app.py -w
+     uv run chainlit run app.py -w
      ```
 
-<p align = "center" draggable=”false”>
+<p align = "center" draggable="false">
 <img src="https://github.com/AI-Maker-Space/LLMOps-Dev-101/assets/37101144/54bcccf9-12e2-4cef-ab53-585c1e2b0fb5"> 
 </p>
 
 Great work! Let's see if we can interact with our chatbot.
 
-<p align = "center" draggable=”false”>
+<p align = "center" draggable="false">
 <img src="https://github.com/AI-Maker-Space/LLMOps-Dev-101/assets/37101144/854e4435-1dee-438a-9146-7174b39f7c61"> 
 </p> 
 
@@ -87,7 +97,7 @@ Awesome! Time to throw it into a docker container and prepare it for shipping!
 <details>
   <summary>🐳 Containerizing our App</summary>
 
-1. Let's build the Docker image. We'll tag our image as `llm-app` using the `-t` parameter. The `.` at the end means we want all of the files in our current directory to be added to our image.
+1. Let's build the Docker image. We'll tag our image as `llm-app` using the `-t` parameter. The `.` at the end means we want all of the files in our current directory to be added to our image. Note that our Dockerfile is set up to use uv for dependency management and will install all the packages defined in our pyproject.toml file.
      
      ``` bash
      docker build -t llm-app .
@@ -101,7 +111,7 @@ Awesome! Time to throw it into a docker container and prepare it for shipping!
 
 3. Visit http://localhost:7860 in your browser to see if the app runs correctly.
 
-<p align = "center" draggable=”false”>
+<p align = "center" draggable="false">
 <img src="https://github.com/AI-Maker-Space/LLMOps-Dev-101/assets/37101144/2c764f25-09a0-431b-8d28-32246e0ca1b7"> 
 </p>
 
